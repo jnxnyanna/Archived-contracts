@@ -99,4 +99,5 @@ contract DynamicFaucet {
     payable(_recipient).transfer(dropRate);
     lastClaim[_recipient] = block.timestamp;
     emit RequestFunds(msg.sender, _recipient, dropRate);
+  }
 }
