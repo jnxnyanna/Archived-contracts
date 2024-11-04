@@ -3,9 +3,9 @@ pragma solidity ^0.8.2;
 
 contract DynamicFaucet {
   address public owner;
-  uint256 public dropRate = 0.000005 ether;
   bool public isPaused = false;
-  uint256 public dropPeriod = 1 days;
+  uint256 public dropRate = 0.000005 * (10 ** 18);
+  uint256 public dropPeriod = 86400;
 
   mapping(address => bool) private admins;
   mapping(address => bool) private blocklist;
@@ -80,6 +80,10 @@ contract DynamicFaucet {
     blocklist[_dst] = _state;
   }
 
+  function isAdmin(address _admin) public view returns (bool) {
+    return admins[_admin];
+  }
+
   function addAdmin(address _admin) external onlyOwner {
     admins[_admin] = true;
   }
@@ -99,5 +103,10 @@ contract DynamicFaucet {
     payable(_recipient).transfer(dropRate);
     lastClaim[_recipient] = block.timestamp;
     emit RequestFunds(msg.sender, _recipient, dropRate);
+  }
+
+  function withdraw() external onlyOwner {
+    require(address(this).balance > 0, "Faucet: Faucet has no balance");
+    payable(msg.sender).transfer(address(this).balance);
   }
 }
