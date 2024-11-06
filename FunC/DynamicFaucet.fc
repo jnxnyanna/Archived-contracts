@@ -1,0 +1,26 @@
+const DROP_RATE = 1000000000; // 1 TON
+const DROP_PERIOD = 86400;
+
+cell storage;
+
+() main(slice in_msg) {
+    if (slice_bits(in_msg) < 512 || in_msg ~> 4 != 0) {
+        return ();
+    }
+    
+    var sender_addr = in_msg~load_msg_addr();
+    var current_time = now();
+    var [last_claim] = storage~load_uint(64);
+
+    if (current_time >= last_claim + DROP_PERIOD) {
+        if (get_balance() >= DROP_RATE) {
+            storage~store_uint(current_time, 64);
+            var msg = begin_cell();
+            msg.store_uint(0x18, 6);
+            msg.store_address(sender_addr);
+            msg.store_grams(DROP_RATE);
+            msg.end_cell();
+            send_raw_message(msg, 1);
+        }
+    }
+}
