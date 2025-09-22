@@ -56,8 +56,9 @@ contract FaucetV2 is EIP712, Pausable, ReentrancyGuard, FaucetRoles, FaucetBase 
         if (!_isRequestDelegator(signer)) revert BadSignature(signature);
 
         _usedNonces[nonce] = true;
-        for (uint256 i = 0; i < users.length; i++) {
+        for (uint256 i = 0; i < users.length;) {
             _request(users[i], accounts[i], getFaucetAmount());
+            unchecked { ++i; }
         }
 
         return true;
