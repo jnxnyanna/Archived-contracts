@@ -38,7 +38,7 @@ contract FaucetV2 is EIP712, Pausable, ReentrancyGuard, FaucetRoles, FaucetBase 
         uint256 deadline,
         uint256 nonce,
         bytes calldata signature
-    ) external nonReentrant returns (bool) {
+    ) external whenNotPaused nonReentrant returns (bool) {
         if (users.length != accounts.length) revert InvalidLength();
         if (block.timestamp > deadline) revert DeadlineExpired(deadline);
         if (_usedNonces[nonce]) revert NonceAlreadyUsed(nonce);
@@ -57,10 +57,7 @@ contract FaucetV2 is EIP712, Pausable, ReentrancyGuard, FaucetRoles, FaucetBase 
 
         _usedNonces[nonce] = true;
         for (uint256 i = 0; i < users.length; i++) {
-            // No need to revert here; just skip if criteria aren't met. We'll check it manually later from the user side.
-            if (canRequest(users[i]) && canRequest(accounts[i])) {
-                _request(users[i], accounts[i], getFaucetAmount());
-            }
+            _request(users[i], accounts[i], getFaucetAmount());
         }
 
         return true;
