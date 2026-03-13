@@ -3,8 +3,8 @@
 No|Opcode|Sintaks|Simbol|Kategori|Deskripsi|Contoh|Gas
 |--|-----|-------|------|--------|---------|------|-----
 **1.**|`ADD` _(Hex: `0x01`)_|`add(x, y)`|`+`|Aritmatika|Penjumlahan (`x + y`).|`add(1, 2)`|**_3_**
-**2.**|`SUB` _(Hex: `0x02`)_|`sub(x, y)`|`-`|Aritmatika|Pengurangan (`x - y`).|`sub(2, 1)`|**_3_**
-**3.**|`MUL` _(Hex: `0x03`)_|`mul(x, y)`|`*`|Aritmatika|Perkalian (`x * y`).|`mul(2, 3)`|**_5_**
+**2.**|`MUL` _(Hex: `0x02`)_|`mul(x, y)`|`*`|Aritmatika|Perkalian (`x * y`).|`mul(2, 3)`|**_5_**
+**3.**|`SUB` _(Hex: `0x03`)_|`sub(x, y)`|`-`|Aritmatika|Pengurangan (`x - y`).|`sub(2, 1)`|**_3_**
 **4.**|`DIV` _(Hex: `0x04`)_|`div(x, y)`|`/`|Aritmatika|Pembagian (`x / y`).|`div(4, 2)`|**_5_**
 **5.**|`MOD` _(Hex: `0x06`)_|`mod(x, y)`|`%`|Aritmatika|Modulo/hasil bagi (`x % y`).|`mod(5, 2)`|**_5_**
 **6.**|`EXP` _(Hex: `0x0a`)_|`exp(x, y)`|`**`|Aritmatika|Eksponen/perkalian berulang (`x ** y`).|`exp(2, 2)`|**_10_**
