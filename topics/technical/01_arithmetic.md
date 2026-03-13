@@ -1,5 +1,5 @@
 #### **1. Arithmetic Operations**
-###### Opcode aritmatika EVM adalah instruksi dasar berukuran 1 byte yang digunakan oleh Ethereum Virtual Machine untuk melakukan operasi matematika (penjumlahan, pengurangan, perkalian, pembagian, modulo, eksponensial) langsung pada stack. Opcode utama meliputi `ADD (0x01)`, `SUB (0x03)`, `MUL (0x02)`, `DIV (0x04)`, `MOD (0x06)`, dan `EXP (0x0a)`, yang beroperasi pada angka 256-bit EVM dari Scratch. 
+###### Opcode aritmatika EVM adalah instruksi dasar berukuran 1 byte yang digunakan oleh Ethereum Virtual Machine untuk melakukan operasi matematika (penjumlahan, pengurangan, perkalian, pembagian, modulo, eksponensial) langsung pada stack. Opcode utama meliputi `ADD` (`0x01`), `SUB` (`0x03`), `MUL` (`0x02`), `DIV` (`0x04`), `MOD` (`0x06`), dan `EXP` (`0x0a`), yang beroperasi pada angka 256-bit EVM dari Scratch. 
 No|Opcode|Sintaks|Simbol|Kategori|Deskripsi|Contoh|Gas
 |--|-----|-------|------|--------|---------|------|-----
 **1.**|`ADD` _(Hex: `0x01`)_|`add(x, y)`|`+`|Aritmatika|Penjumlahan (`x + y`).|`add(1, 2)`|**_3_**
