@@ -9,7 +9,7 @@ No|Opcode|Sintaks|Simbol|Kategori|Deskripsi|Contoh|Gas
 **2.**|`SUB` _(Hex: `0x02`)_|`sub(x, y)`|`-`|Aritmatika|Pengurangan `(x - y)`|`sub(2, 1)`|**_3_**
 **3.**|`MUL` _(Hex: `0x03`)_|`mul(x, y)`|`*`|Aritmatika|Perkalian `(x * y)`|`mul(2, 3)`|**_5_**
 **4.**|`DIV` _(Hex: `0x04`)_|`div(x, y)`|`/`|Aritmatika|Pembagian `(x / y)`|`div(4, 2)`|**_5_**
-**5.**|`MOD` _(Hex: `0x05`)_|`mod(x, y)`|`%`|Aritmatika|Modulo/hasil bagi `(x % y)`|`mod(5, 2)`|**_5_**
+**5.**|`MOD` _(Hex: `0x06`)_|`mod(x, y)`|`%`|Aritmatika|Modulo/hasil bagi `(x % y)`|`mod(5, 2)`|**_5_**
 **6.**|`EXP` _(Hex: `0x0a`)_|`exp(x, y)`|`**`|Aritmatika|Eksponen/perkalian berulang `(x ** y)`|`exp(2, 2)`|**_10_**
 **7.**|`SDIV` _(Hex: `0x05`)_|`sdiv(x, y)`|`/`|Aritmatika|Pembagian bertanda `(x / y)`|`sdiv(-4, 2)`|**_5_**|
 **8.**|`SMOD` _(Hex: `0x07`)_|`smod(x, y)`|`%`|Aritmatika|Modulo/hasil bagi bertanda `(x % y)`|`smod(-3, 2)`|**_5_**
