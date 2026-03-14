@@ -14,3 +14,21 @@
 | **12.** | `SHL` _(Hex: `0x1b`)_    | `shl(n, x)`  | Melakukan shift bit ke kiri sebanyak `n` bit.                                                           | shl(1, 3) → 6            |
 | **13.** | `SHR` _(Hex: `0x1c`)_    | `shr(n, x)`  | Melakukan shift bit ke kanan sebanyak `n` bit (unsigned).                                               | shr(1, 8) → 4            |
 | **14.** | `SAR` _(Hex: `0x1d`)_    | `sar(n, x)`  | Melakukan shift bit ke kanan sebanyak `n` bit dengan mempertahankan tanda (signed shift).               | sar(1, -4) → -2          |
+
+####
+```Solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.22;
+
+contract Counter {
+    uint256 public counter;
+
+    function increase() public {
+        counter += 1;
+    }
+
+    function decrease() public {
+        require(counter > 0);
+        counter -= 1;
+    }
+}```
